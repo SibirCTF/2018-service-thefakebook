@@ -1,0 +1,46 @@
+{
+  "service_name": "2018-service-thefakebook",
+  "display_name": "Thefakebook",
+  "ctf_event": "Sibir CTF 2018",
+  "year": 2018,
+  "description": "Социальная сеть с профилями, друзьями и личными сообщениями.",
+  "author": null,
+  "service_port": 8000,
+  "languages": [
+    "Python"
+  ],
+  "tech_stack": [
+    "Python",
+    "Django",
+    "PostgreSQL",
+    "Gunicorn"
+  ],
+  "dependencies": {
+    "runtime": [
+      "Django",
+      "gunicorn",
+      "Pillow",
+      "psycopg2-binary",
+      "pytz"
+    ],
+    "development": [],
+    "system": []
+  },
+  "vulnerabilities": [
+    {
+      "type": "Access Control Bypass",
+      "description": "Фильтр сообщений учитывает поле about_me, что позволяет читать чужие переписки.",
+      "severity": "High"
+    },
+    {
+      "type": "Sensitive Data Exposure",
+      "description": "Пароль пользователя сохраняется в cookie passw.",
+      "severity": "Medium"
+    }
+  ],
+  "metadata": {
+    "difficulty": null,
+    "category": null,
+    "tags": []
+  }
+}
